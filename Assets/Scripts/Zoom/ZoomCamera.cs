@@ -14,12 +14,13 @@ public class ZoomCamera : MonoBehaviour
         {
             _isZoomed = false;
             _targetCamera.enabled = false;
-            return;
         }
-
-        _isZoomed = true;
-        transform.position = new Vector3(zoomableObject.transform.position.x, zoomableObject.transform.position.y, transform.position.z);
-        _targetCamera.orthographicSize = size;
-        _targetCamera.enabled = true;
+        else
+        {
+            _isZoomed = true;
+            transform.position = new Vector3(zoomableObject.transform.position.x, zoomableObject.transform.position.y, transform.position.z);
+            _targetCamera.orthographicSize = size;
+            _targetCamera.enabled = true;
+        }
     }
 }
