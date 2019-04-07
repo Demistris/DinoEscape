@@ -11,7 +11,7 @@ public class BackArrow : MonoBehaviour
     private void OnMouseDown()
     {
         MainCamera.transform.position = new Vector3(MainCamera.transform.position.x - 20.25f, MainCamera.transform.position.y, MainCamera.transform.position.z);
-        Eq.ChangePosition(20.25f); // change position of equipment
+        Eq.ChangePosition(-20.25f); // change position of equipment
         UpdateLeftArrowVisibility();
     }
 

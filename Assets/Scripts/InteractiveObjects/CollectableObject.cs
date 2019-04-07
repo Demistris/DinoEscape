@@ -23,18 +23,23 @@ public class CollectableObject : MonoBehaviour
             equipment.AddToEq(id, this); // add to equipment table
             switch (id) // check item id
             {
-                case 0: // it's a battery
+                case 0: // it's a battery for radio
                     transform.Rotate(new Vector3(0, 0, 90)); // rotate to horizontal
                     transform.position = new Vector3(-3.97f, -4.4f, 0.0f); // place in second equipment box
                     break;
 
-                case 1:
+                case 1: // battery for uv light
                     transform.Rotate(new Vector3(0, 0, 90)); // rotate to horizontal
                     transform.position = new Vector3(-20.73f, -4.4f, 0.0f); // place in third equipment box
                     break;
 
-                case 2:
+                case 2: // uv light
                     transform.position = new Vector3(-16.55f, -4.4f, 0.0f); // place in fourth equipment box
+                    break;
+
+                case 3: // note and key
+                    if (gameObject.GetComponent<SpriteRenderer>().sprite.name == "note") transform.position = new Vector3(48.02f, -4.4f, 0.0f); // if it's a note, place in fifth eqipment box
+                    else transform.position = new Vector3(-12.88f, -4.4f, 0.0f); // it's a key, place in fifth eqipment box
                     break;
 
                 default: // all other items (nothing) - all items should be implemented in future

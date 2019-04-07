@@ -1,16 +1,15 @@
-﻿/* TODO list
+﻿ /* TODO list
  * w eq:
  + radio - stały element
- - latarka uv - po połączeniu w eq z baterią daje możliwość połączenia z kartką w eq co powoduje pojawienie się na kartce pinu
+ + latarka uv - po połączeniu w eq z baterią daje możliwość połączenia z kartką w eq co powoduje pojawienie się na kartce pinu
  + bateria x2 - do latarki i radia - muszą być inne żeby gracz się nie dziwił że nie może tej od latarki włożyć do radia
- - kartka - z tablicy korkowej z kodem do sejfu
- - kartka - do połączenia z naładowaną latarką ?ale kurde z czym ta kartka?
- - klucz - w sejfie, do otworzenia zamka
+ + kartka - z tablicy korkowej z kodem do sejfu
+ +/- klucz - w sejfie, do otworzenia zamka
 
  * na scenie
- - szkielet dinozaura - po połączeniu go z naładowaną latarką z eq wyświetlają się litery
+ + szkielet dinozaura - po połączeniu go z naładowaną latarką z eq wyświetlają się litery
  - czytnik palca - otwiera jeden z zamków
- - sejf z latarką - otwierany kartką z kodem do sejfu
+ + sejf z kluczem - otwierany kartką z kodem do sejfu
  
  * podpowiedzi
  - podpowiedzi z radia
@@ -21,4 +20,10 @@
  - układanie kabli - otwiera jeden z zamków
  - układanie jaj - otwiera sejf z kluczem do otwarcia jednego z zamków
  - ciśnienie wody (opcjonalne) - dodatkowy czas
+
+ * drzwi
+ - trzeba zrobić jakieś drzwi (jedne sprite zmieniający się w zależności od rozwiązanych zagadek)
  */
+
+ //Kaja: kabelki, poprawic zooma, podpowiedzi <- dobra kolejnosc
+ //Emanuel: woda, ikonki na kompie, zamki, klasa ktora sprawza postepy
