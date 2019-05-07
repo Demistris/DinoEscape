@@ -25,16 +25,16 @@ public class CollectableObject : MonoBehaviour
             {
                 case 0: // it's a battery for radio
                     transform.Rotate(new Vector3(0, 0, 90)); // rotate to horizontal
-                    transform.position = new Vector3(-3.97f, -4.4f, 0.0f); // place in second equipment box
+                    transform.position = new Vector3(16.5f, -4.4f, 0.0f); // place in second equipment box
                     break;
 
                 case 1: // battery for uv light
                     transform.Rotate(new Vector3(0, 0, 90)); // rotate to horizontal
-                    transform.position = new Vector3(-20.73f, -4.4f, 0.0f); // place in third equipment box
+                    transform.position = new Vector3(20.27f, -4.4f, 0.0f); // place in third equipment box
                     break;
 
                 case 2: // uv light
-                    transform.position = new Vector3(-16.55f, -4.4f, 0.0f); // place in fourth equipment box
+                    transform.position = new Vector3(27.45f, -4.4f, 0.0f); // place in fourth equipment box
                     break;
 
                 case 3: // note and key

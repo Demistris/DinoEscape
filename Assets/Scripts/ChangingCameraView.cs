@@ -8,35 +8,43 @@ public class ChangingCameraView : MonoBehaviour
     public GameObject LeftArrow;
     public Equipment eq;
 
+    float delta = 20.25f;
+
     public void OnRightArrowClicked()
     {
-        transform.position = new Vector3(gameObject.transform.position.x + 20.25f, transform.position.y, transform.position.z);
-        eq.ChangePosition(20.25f); // change position of equipment
-        UpdateArrowsVisibility();
+        if(GetIsMaxToTheRight())
+        {
+            transform.position = new Vector3(-40.5f, transform.position.y, transform.position.z);
+            eq.ChangePosition(-60.75f);
+        }
+        else
+        {
+            transform.position = new Vector3(gameObject.transform.position.x + delta, transform.position.y, transform.position.z);
+            eq.ChangePosition(20.25f); // change position of equipment
+        }
     }
 
     public void OnLeftArrowClicked()
     {
-        transform.position = new Vector3(gameObject.transform.position.x - 20.25f, transform.position.y, transform.position.z);
-        eq.ChangePosition(-20.25f); // change position of equipment
-        UpdateArrowsVisibility();
+        if (GetIsMaxToTheLeft())
+        {
+            transform.position = new Vector3(20.25f, transform.position.y, transform.position.z);
+            eq.ChangePosition(60.75f);
+        }
+        else
+        {
+            transform.position = new Vector3(gameObject.transform.position.x - delta, transform.position.y, transform.position.z);
+            eq.ChangePosition(-20.25f); // change position of equipment
+        }
     }
 
-    private void UpdateRightArrowVisibility()
+    private bool GetIsMaxToTheRight()
     {
-        bool isMaxToTheRight = Mathf.Approximately(gameObject.transform.position.x, 20.25f);
-        RightArrow.SetActive(!isMaxToTheRight);
+        return Mathf.Approximately(gameObject.transform.position.x, 20.25f);
     }
 
-    private void UpdateLeftArrowVisibility()
+    private bool GetIsMaxToTheLeft()
     {
-        bool isMaxToTheLeft = Mathf.Approximately(gameObject.transform.position.x, -20.25f);
-        LeftArrow.SetActive(!isMaxToTheLeft);
-    }
-
-    private void UpdateArrowsVisibility()
-    {
-        UpdateRightArrowVisibility();
-        UpdateLeftArrowVisibility();
+        return Mathf.Approximately(gameObject.transform.position.x, -40.5f);
     }
 }

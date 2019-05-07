@@ -7,16 +7,12 @@ public class QuitIcon : MonoBehaviour
     public Camera MainCamera;
     public Equipment Eq;
     public GameObject Arrows;
+    public GameObject inputField;
 
     private void OnMouseDown()
     {
-        MainCamera.transform.position = new Vector3(MainCamera.transform.position.x + 40.50f, MainCamera.transform.position.y, MainCamera.transform.position.z);
-        Eq.ChangePosition(40.50f); // change position of equipment
-        UpdateArrowsVisibility();
-    }
-
-    private void UpdateArrowsVisibility()
-    {
-        Arrows.SetActive(true);
+        inputField.gameObject.SetActive(false); // disable input field if it was displayed
+        MainCamera.transform.position = new Vector3(40.50f, MainCamera.transform.position.y, MainCamera.transform.position.z);
+        Eq.ChangePosition(81f); // change position of equipment
     }
 }

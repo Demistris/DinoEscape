@@ -5,13 +5,15 @@ using UnityEngine;
 public class WiresMinigame : MonoBehaviour
 {
     public Camera MainCamera;
-    public Equipment Eq;
     public GameObject Arrows;
+
+    public float BackTarget;
+    public BackArrow backArrow;
 
     public void OnMouseDown()
     {
-        MainCamera.transform.position = new Vector3(MainCamera.transform.position.x, MainCamera.transform.position.y + 20.25f, MainCamera.transform.position.z);
-        //Eq.ChangePosition(-40.50f);
+        MainCamera.transform.position = new Vector3(MainCamera.transform.position.x - 81f, MainCamera.transform.position.y, MainCamera.transform.position.z);
+        backArrow.BackTarget = BackTarget;
         UpdateArrowsVisibility();
     }
 

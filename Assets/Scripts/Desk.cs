@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Desk : MonoBehaviour
 {
-    public Camera MainCamera;
-    public Equipment Eq;
-    public GameObject LeftArrow;
+    public CameraController cameraController;
+    public GameObject Arrows;
+
+    public float BackTarget;
+    public BackArrow backArrow;
 
     private void OnMouseDown()
     {
-        MainCamera.transform.position = new Vector3(MainCamera.transform.position.x + 20.25f, MainCamera.transform.position.y, MainCamera.transform.position.z);
-        Eq.ChangePosition(20.25f); // change position of equipment
-        UpdateLeftArrowVisibility();
+        cameraController.MoveCameraTo(60.75f);
+        backArrow.BackTarget = BackTarget;
+
+        UpdateArrowsVisibility();
     }
 
-    private void UpdateLeftArrowVisibility()
+    private void UpdateArrowsVisibility()
     {
-        LeftArrow.SetActive(false);
+        Arrows.SetActive(false);
     }
 }

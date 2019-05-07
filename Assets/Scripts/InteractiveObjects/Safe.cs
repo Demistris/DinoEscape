@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Safe : MonoBehaviour
 {
-    public Equipment eq;
-    public CollectableObject key;
+    public CollectableObject key; // object stored in safe
 
     // Start is called before the first frame update
     void Start()
@@ -13,15 +12,10 @@ public class Safe : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Interacive/safe"); // at the begining safe is closed so load this sprite
     }
 
-    void OnMouseDown()
+    // open safe
+    public void OpenSafe()
     {
-        if (eq.items[3] != null && eq.items[3].GetIsSelected())
-        {
-            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Interacive/safe-open"); // load opened safe sprite
-            key.gameObject.SetActive(true); // show key (activate object)
-            eq.items[3].gameObject.SetActive(false); // disable and delete note from equipment
-            eq.items[3] = null;
-            eq.stuff[3] = false;
-        }
+        GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Interacive/safe-open"); // load opened safe sprite
+        key.gameObject.SetActive(true); // show key (activate object)
     }
 }
