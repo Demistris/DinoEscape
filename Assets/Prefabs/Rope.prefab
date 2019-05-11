@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1400886397513864561}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.9139862, y: 2.853622, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1400886398109210020}
   m_Father: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
     type: 3}
   plugPrefab: {fileID: 6921812175150734607, guid: c6e6628d12fce804289097063ec2fda2,
     type: 3}
-  linksCount: 20
+  linksCount: 45
   line: {fileID: 1400886397513864554}
 --- !u!120 &1400886397513864554
 LineRenderer:
@@ -171,7 +171,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.22010231
+        value: 0.0909214
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -356,11 +356,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1400886397513864558}
     m_Modifications:
-    - target: {fileID: 3867313089508832212, guid: b3ab4b89c003f2441b53d2bd7056d2b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Hook
-      objectReference: {fileID: 0}
     - target: {fileID: 3867313089508832215, guid: b3ab4b89c003f2441b53d2bd7056d2b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -415,6 +410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867313089508832212, guid: b3ab4b89c003f2441b53d2bd7056d2b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Hook
       objectReference: {fileID: 0}
     - target: {fileID: 3867313089508832214, guid: b3ab4b89c003f2441b53d2bd7056d2b4,
         type: 3}
