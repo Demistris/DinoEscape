@@ -166,5 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff29ce2820346c5449778988cb7b59e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hookPosition: {fileID: 1400886397513864561, guid: 604456544211b034e8b1d076e48fa52d,
+  hookPosition: {fileID: 1400886397513864557, guid: 604456544211b034e8b1d076e48fa52d,
     type: 3}
+  DistanceY: 25
+  IdNumber: 0
+  MainSocket: {fileID: 0}
+  WiresWinGuard: {fileID: 560577066, guid: 6b057d2a9c35579448662f4278b87e90, type: 3}

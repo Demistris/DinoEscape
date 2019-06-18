@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3962323508413814597}
   - component: {fileID: 3962323508413814596}
+  - component: {fileID: 560577066}
   m_Layer: 0
   m_Name: '[GameMaster]'
   m_TagString: Untagged
@@ -43,4 +44,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda4ba8c3b73d614e93d30d4952c728d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zoomCamera: {fileID: 0}
+--- !u!114 &560577066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962323508413814603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe30765d0ddd764189fafb21d2ad83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activityGuard:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  WiresMinigameIsWon: 0
+  door: {fileID: 0}
+  LightningEffects: {fileID: 0}
+  TextMessageWires: {fileID: 0}
+  ColliderPinPanel:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

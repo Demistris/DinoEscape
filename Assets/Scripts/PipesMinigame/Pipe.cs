@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Emanuel Misztal
+ * 2019
+ *                         _
+ *          ,---.          U
+ *         ;     \         ;
+ *     .==\"/==.  `-.___.-'
+ *    ((+) .  .:)
+ *    |`.-(o)-.'|
+ *    \/  \_/  \/
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,41 +18,21 @@ public class Pipe : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        if (GetComponent<SpriteRenderer>().sprite.name == "pipe-knee")
+        if (GetComponent<SpriteRenderer>().sprite.name == "rurakolanko") // if it's pipe knee
         {
-            switch (transform.eulerAngles.z)
-            {
-                case 0:
-                    transform.eulerAngles = new Vector3(0f, 0f, 90f);
-                    break;
-                case 90:
-                    transform.eulerAngles = new Vector3(0f, 0f, 180f);
-                    break;
-                case 180:
-                    transform.eulerAngles = new Vector3(0f, 0f, 270f);
-                    break;
-                case 270:
-                    transform.eulerAngles = new Vector3(0f, 0f, 0f);
-                    break;
-                default:
-                    Debug.Log("wrong pipe rotation");
-                    break;
-            }
+            float angle = transform.eulerAngles.z;
+
+            if (angle > 89f && angle < 91f) transform.eulerAngles = new Vector3(0f, 0f, 180f); 
+            else if (angle > 179f && angle < 181f) transform.eulerAngles = new Vector3(0f, 0f, 270f);
+            else if (angle > 269f && angle < 271f) transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            else transform.eulerAngles = new Vector3(0f, 0f, 90f);
         }
-        else
+        else // it's straight pipe
         {
-            switch (transform.eulerAngles.z)
-            {
-                case 0:
-                    transform.eulerAngles = new Vector3(0f, 0f, 90f);
-                    break;
-                case 90:
-                    transform.eulerAngles = new Vector3(0f, 0f, 0f);
-                    break;
-                default:
-                    Debug.Log("wrong pipe rotation");
-                    break;
-            }
+            float angle = transform.eulerAngles.z;
+
+            if (angle > -1f && angle < 1f) transform.eulerAngles = new Vector3(0f, 0f, 90f);
+            else transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
     }
 }

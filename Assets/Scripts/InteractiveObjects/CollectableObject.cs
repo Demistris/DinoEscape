@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Emanuel Misztal
+ * 2019
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,23 +30,30 @@ public class CollectableObject : MonoBehaviour
             {
                 case 0: // it's a battery for radio
                     transform.Rotate(new Vector3(0, 0, 90)); // rotate to horizontal
-                    transform.position = new Vector3(16.5f, -4.4f, 0.0f); // place in second equipment box
+                    transform.position = new Vector3(40.5f, -4.4f, 0.0f); // place in second equipment box
                     break;
 
                 case 1: // battery for uv light
                     transform.Rotate(new Vector3(0, 0, 90)); // rotate to horizontal
-                    transform.position = new Vector3(20.27f, -4.4f, 0.0f); // place in third equipment box
+                    transform.position = new Vector3(43f, -4.4f, 0.0f); // place in third equipment box
                     break;
 
                 case 2: // uv light
-                    transform.position = new Vector3(27.45f, -4.4f, 0.0f); // place in fourth equipment box
+                    transform.position = new Vector3(45.35f, -4.4f, 0.0f); // place in fourth equipment box
                     break;
 
                 case 3: // note and key
-                    if (gameObject.GetComponent<SpriteRenderer>().sprite.name == "note") transform.position = new Vector3(48.02f, -4.4f, 0.0f); // if it's a note, place in fifth eqipment box
-                    else transform.position = new Vector3(-12.88f, -4.4f, 0.0f); // it's a key, place in fifth eqipment box
+                    transform.position = new Vector3(-96f, -4.4f, 0.0f); // it's a key, place in fifth eqipment box
                     break;
 
+                case 4: // Egg
+                    transform.position = new Vector3(-23.5f, -4.4f, 0.0f); // place in first equipment box
+                    break;
+
+                case 5:
+                    transform.localScale += new Vector3(0.05f, 0.05f, 0);
+                    transform.position = new Vector3(13.5f, -4.4f, 0.0f);
+                    break;
                 default: // all other items (nothing) - all items should be implemented in future
                     break;
             }

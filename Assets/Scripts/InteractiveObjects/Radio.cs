@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Kaja Więckowska, Emanuel Misztal
+ * 2019
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,11 +15,15 @@ public class Radio : CollectableObject // inherits from CollectableObject becaus
 
     private BatteryLevel batteryStatus; // variable of type BatteryLevel storing current battery level
 
+    // links to comic clouds with tips
     public GameObject FirstComicCloud;
     public GameObject SecondComicCloud;
     public GameObject ThirdComicCloud;
     public GameObject FourthComicCloud;
     public GameObject FifthComicCloud;
+
+    // link to tip clouds order object
+    public CloudsOrder comicCloud;
 
     void Start()
     {
@@ -22,6 +31,7 @@ public class Radio : CollectableObject // inherits from CollectableObject becaus
         gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Interacive/intercom-depleted"); // load depleted sprite
     }
 
+    // when batery is inserted in
     public void AddBattery()
     {
         batteryStatus = BatteryLevel.HIGH; // change battery status to high
@@ -41,7 +51,7 @@ public class Radio : CollectableObject // inherits from CollectableObject becaus
                 break;
 
             case BatteryLevel.LOW: // battery is low
-                SecondComicCloud.gameObject.SetActive(false);
+                SecondComicCloud.SetActive(false);
                 batteryStatus = BatteryLevel.DEP; // change battery status to depleted
                 gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Interacive/intercom-depleted"); // load depleted sprite
                 ThirdComicCloud.SetActive(true);

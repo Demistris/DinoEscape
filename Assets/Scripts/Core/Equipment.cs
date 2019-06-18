@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Emanuel Misztal
+ * 2019
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,8 +17,8 @@ public class Equipment : MonoBehaviour
 
     void Start()
     {
-        stuff = new bool[4] { false, false, false, false }; // do not change test to items[x] != null becouse items is private
-        items = new CollectableObject[4] { null, null, null, null}; // create empty item list
+        stuff = new bool[6] { false, false, false, false, false, false }; // do not change test to items[x] != null becouse items is private
+        items = new CollectableObject[6] { null, null, null, null, null, null}; // create empty item list
     }
 
     // add item to equipment
@@ -36,14 +41,14 @@ public class Equipment : MonoBehaviour
 
         if (items[1] != null && items[1].GetIsSelected() && items[2] != null && items[2].GetIsSelected()) // if uv light and second battery are selected
         {
-            items[2].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Interacive/uv-light-charged"); // change UV light sprite to charged sprite
+            items[2].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Interacive/latarka-charged"); // change UV light sprite to charged sprite
             items[2].ChangeIsSelectedStatus(); // unselect UV light
             items[1].gameObject.SetActive(false); // mark battery as inactive
             items[1] = null; // delete battery link from equipment
             stuff[1] = false; // mark battery as not in equipment
         }
 
-        if (items[2] != null && items[2].GetIsSelected() && items[2].GetComponent<SpriteRenderer>().sprite.name == "uv-light-charged" && items[3] != null && items[3].GetIsSelected() && items[3].GetComponent<SpriteRenderer>().sprite.name == "note") // combine charged uv light with undecoded note
+        if (items[2] != null && items[2].GetIsSelected() && items[2].GetComponent<SpriteRenderer>().sprite.name == "latarka-charged" && items[3] != null && items[3].GetIsSelected() && items[3].GetComponent<SpriteRenderer>().sprite.name == "note") // combine charged uv light with undecoded note
         {
             items[3].gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Interacive/note-code"); // load decoded note sprite
             items[2].ChangeIsSelectedStatus(); // unselect UV light
@@ -60,6 +65,7 @@ public class Equipment : MonoBehaviour
     {
         transform.position = new Vector3(gameObject.transform.position.x + offset, transform.position.y, transform.position.z); // change position of equipment background
         radio.transform.position = new Vector3(radio.transform.position.x + offset, radio.transform.position.y, radio.transform.position.z); // change position of radio
+        
         // now change position of other items
         foreach (CollectableObject item in items)
         {
